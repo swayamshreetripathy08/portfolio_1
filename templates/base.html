@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ name }} - Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Google Fonts for Dark Academia look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile-header">
+                <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Photo"
+                    class="profile-img">
+                <h1>{{ name }}</h1>
+                <p>{{ title }}</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>&copy; 2026</p>
+            </div>
+        </aside>
+
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div id="chat-widget">
+        <button id="chat-toggle" aria-label="Open Chat">
+            <span class="icon">💬</span>
+        </button>
+        <div id="chat-window" class="hidden">
+            <div class="chat-header">
+                <h3>Ask Swayamshree</h3>
+                <button id="chat-close">×</button>
+            </div>
+            <div id="chat-messages">
+                <div class="message bot-message">
+                    Hello! I'm Swayamshree's AI assistant. Ask me anything about his skills, projects, or hobbies.
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Type a message...">
+                <button id="chat-send">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+
+</html>

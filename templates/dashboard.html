@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-grid">
+
+    <!-- About Section -->
+    <div class="card about-card" id="about">
+        <h2>About Me</h2>
+        <p>{{ about }}</p>
+        <div class="hobbies">
+            <h3>Hobbies</h3>
+            <ul>
+                {% for hobby in hobbies %}
+                <li>{{ hobby }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="card contact-card" id="contact">
+        <h2>Contact</h2>
+        <ul>
+            <li><strong>Email:</strong> {{ contact.email }}</li>
+            <li><strong>Phone:</strong> {{ contact.phone }}</li>
+            <li><strong>Location:</strong> {{ contact.location }}</li>
+        </ul>
+        <div class="languages">
+            <h3>Languages</h3>
+            <p>{{ languages|join(', ') }}</p>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="card skills-card" id="skills">
+        <h2>Skills</h2>
+        <div class="skill-tags">
+            {% for skill in skills %}
+            <span class="tag">{{ skill }}</span>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <div class="card education-card" id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            {% for edu in education %}
+            <div class="timeline-item">
+                <h3>{{ edu.institution }}</h3>
+                <p class="role">{{ edu.degree }}</p>
+                <span class="date">{{ edu.year }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="card cert-card" id="projects"> <!-- Using projects ID for nav link compatibility -->
+        <h2>Certifications</h2>
+        <ul>
+            {% for cert in certifications %}
+            <li>{{ cert }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+{% endblock %}
