@@ -53,6 +53,20 @@ A minimalist, dashboard-style portfolio website featuring a **Dark Academia** ae
 5. **Visit the site**:
    Open [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
+## 🚀 Deployment on Render
+
+1.  **Create a Render account** at [render.com](https://render.com).
+2.  **Connect your GitHub repository**.
+3.  **Create a New Web Service**:
+    - Select your repository.
+    - **Build Command**: `pip install -r requirements.txt`
+    - **Start Command**: `gunicorn app:app`
+4.  **Environment Variables**:
+    - Go to the **Environment** tab.
+    - Add Key: `GROQ_API_KEY`
+    - Value: Your Groq API Key (starts with `gsk_...`).
+5.  **Deploy**: Click "Create Web Service".
+
 ## 📂 Project Structure
 
 ```
@@ -72,5 +86,5 @@ portfolio/
 ## 📬 Contact
 
 **Swayamshree Tripathy**  
-📧 swayamshreetripathy.offcial@gmail.com  
+📧 swayamshreetripathy.official@gmail.com  
 📍 Berhampur, Odisha

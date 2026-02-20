@@ -1,20 +1,23 @@
 from flask import Flask, render_template, request, jsonify
 from groq import Groq
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
 # Initialize Groq Client
 # Note: In a production environment, use environment variables for keys.
 # client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
-client = Groq(api_key="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")
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 RESUME_DATA = {
     "name": "Swayamshree Tripathy",
     "title": "Computer Science Student",
     "contact": {
         "phone": "+91 9692637554",
-        "email": "swayamshreetripathy.offcial@gmail.com",
+        "email": "swayamshreetripathy.official@gmail.com",
         "location": "Berhampur, Odisha"
     },
     "about": "I am a dedicated B.Tech Computer Science student with a strong interest in coding, analytics, and problem-solving. I actively work on improving my skills in C/C++ and Python while strengthening my understanding of core subjects like DBMS, DAA, and Digital Logic. Alongside academics, I balance dance practice, fitness goals, and content creation with disciplined time management. Consistent, self-driven, and growth-oriented, I strive to continuously improve both technically and personally while building a strong foundation for a career in IT.",
